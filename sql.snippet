@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>sql</Title>
+			<Shortcut>sql</Shortcut>
+			<Description>Codeschnipsel für SQL</Description>
+			<Author>Kevin Krauss</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="csharp">
+			<![CDATA[const string ConnectionString = "Data Source =db4-d; Initial Catalog =KTM; Integrated Security = SSPI; Connect Timeout = 30; Encrypt=False";
+using (SqlConnection cnn = new SqlConnection(ConnectionString))
+{
+    try
+    {
+        cnn.Open();
+    }
+    catch
+    {
+        Error.ShowConnectionError();
+    }
+    string query = "$selected$ $end$";
+    using (SqlCommand cmd = new SqlCommand(query, cnn))
+    {
+        
+    }
+    cnn.Close();
+}]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
