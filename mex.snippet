@@ -11,7 +11,7 @@
       <Declarations>
         <Literal Editable="false"></Literal>
       </Declarations>
-      <Code Language="csharp"><![CDATA[MessageBox.Show("$end$: " + Environment.NewLine + ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);]]></Code>
+      <Code Language="csharp"><![CDATA[MessageBox.Show(this.GetType().FullName + "." + System.Reflection.MethodBase.GetCurrentMethod().Name + ":" + Environment.NewLine + ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);$end$]]></Code>
     </Snippet>
   </CodeSnippet>
 </CodeSnippets>
